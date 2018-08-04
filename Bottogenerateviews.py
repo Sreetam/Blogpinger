@@ -21,7 +21,30 @@ site = ["https://sreetamspeaks.blogspot.com/2017/02/it-fascinates-me-to-read-abo
         "https://sreetamspeaks.blogspot.com/2017/02/james-hogg-was-well-known-poet-but-he.html",
         "https://sreetamspeaks.blogspot.com/2017/02/sitting-alone-my-mind-oftenwanders-to.html",
         "https://sreetamspeaks.blogspot.com/2017/01/he-woke-up-in-this-morning-looked_19.html",
-        "https://sreetamspeaks.blogspot.com/2017/01/thick-and-dark-clouds-sometimes.html"]  #use a longer list to avoid detection
+        "https://sreetamspeaks.blogspot.com/2017/01/thick-and-dark-clouds-sometimes.html",
+	    "https://sreetamspeaks.blogspot.com/2018/08/twisted-meanings.html",
+        "https://sreetamspeaks.blogspot.com/2017/02/it-fascinates-me-to-read-about-lives-of.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2018/08/why-wont-you-just-sleep.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2018/08/twisted-meanings.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2018/08/its-farce.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2018/07/hi-welcome-back-to-my-blog.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2018/07/i-was-watching-conan-o-briens-interview.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2017/02/james-hogg-was-well-known-poet-but-he.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2017/02/sitting-alone-my-mind-oftenwanders-to.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2017/01/he-woke-up-in-this-morning-looked_19.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2017/01/thick-and-dark-clouds-sometimes.html?spref=fb",
+	    "https://sreetamspeaks.blogspot.com/2018/08/twisted-meanings.html?spref=fb",
+        "https://sreetamspeaks.blogspot.com/2017/02/it-fascinates-me-to-read-about-lives-of.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2018/08/why-wont-you-just-sleep.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2018/08/twisted-meanings.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2018/08/its-farce.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2018/07/hi-welcome-back-to-my-blog.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2018/07/i-was-watching-conan-o-briens-interview.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2017/02/james-hogg-was-well-known-poet-but-he.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2017/02/sitting-alone-my-mind-oftenwanders-to.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2017/01/he-woke-up-in-this-morning-looked_19.html?spref=tw",
+        "https://sreetamspeaks.blogspot.com/2017/01/thick-and-dark-clouds-sometimes.html?spref=tw",
+	    "https://sreetamspeaks.blogspot.com/2018/08/twisted-meanings.html?spref=tw"]  #use a longer list to avoid detection
 
 blog = 3000000 # this is the number of times the website needs to be pinged
 
@@ -32,7 +55,7 @@ if __name__ == '__main__':
             ctrlPort=sys.argv[2]
     with TorRequest(proxy_port=proxyPort, ctrl_port=ctrlPort, password=None) as tr:
         for i in range(blog):
-            response = tr.get(site[nr.randint(0,10)], headers=headers,verify=False)
+            response = tr.get(site[nr.randint(0,33)], headers=headers,verify=False)
             print ("Blog View "+str(i)+" Added With IP:" +str(tr.get('http://ipecho.net/plain').content))
             #time.sleep(nr.randint(60,100))  #for avoiding detection
             tr.reset_identity()
